@@ -1,9 +1,9 @@
-.cards{
+.cards {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
-.card{
+.card {
   display: flex;
   position: relative;
   width: 400px;
@@ -12,17 +12,39 @@
   gap: 20px;
   border-radius: 20px;
 }
-.card img{
+.card img {
   width: 200px;
   border-radius: 20px;
 }
 
-.card p{
+.card p {
   font-size: 3rem;
   color: white;
-  
 }
 button {
   border: none;
   background-color: transparent;
+}
+.w100 {
+  width: 100%;
+}
+.h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #3a0ca3;
+}
+.h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #3a0ca3;
+}
+.h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #3a0ca3;
+}
+.auto {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 }
