@@ -1,10 +1,12 @@
-import css from "../all.module.css/footer.css";
+import Container from "react-bootstrap/Container";
 
 const Footer = () => {
   return (
-    <div className="container">
+    // <div className="d-flex">
+    <Container>
       <img src="/images/zurag4.svg" alt="" className="auto" />
-    </div>
+    </Container>
+    // </div>
   );
 };
 
