@@ -1,9 +1,21 @@
 import style from "../all.module.css/main.module.css";
-import Button from "./main/button/index";
+import Btn from "./main/button/index";
 import Cards from "./main/cards/index";
+import { useState } from "react";
+
+const menus = [
+  { name: "All", category: "" },
+  { name: "UI Design", category: "UI" },
+  { name: "UX Design", category: "UX" },
+  { name: "DEV Design", category: "DEV" },
+  { name: "Articles", category: "" },
+  { name: "Tutorials", category: "" },
+  { name: "News", category: "" },
+];
 
 const content = [
   {
+    category: "UI",
     imageUrl: "/images/zurag1.png",
     date: "NOV 23 2020",
     title: "This way is wrong about UI Design.",
@@ -12,6 +24,7 @@ const content = [
     button: "READ MORE",
   },
   {
+    category: "UI",
     imageUrl: "/images/zurag2.png",
     date: "NOV 23 2020",
     title: "This way is wrong about UI Design.",
@@ -20,6 +33,25 @@ const content = [
     button: "READ MORE",
   },
   {
+    category: "UX",
+    imageUrl: "/images/zurag1.png",
+    date: "NOV 23 2020",
+    title: "This way is wrong about UX Design.",
+    paragraph:
+      "A quick guide to assisting users in the challenging steps from learning about your podcast on the web. A quick guide to assisting users in the challenging steps from learning about your podcast on the web.",
+    button: "READ MORE",
+  },
+  {
+    category: "UX",
+    imageUrl: "/images/zurag2.png",
+    date: "NOV 23 2020",
+    title: "This way is wrong about UX Design.",
+    paragraph:
+      "A quick guide to assisting users in the challenging steps from learning about your podcast on the web. A quick guide to assisting users in the challenging steps from learning about your podcast on the web.",
+    button: "READ MORE",
+  },
+  {
+    category: "UI",
     imageUrl: "/images/zurag1.png",
     date: "NOV 23 2020",
     title: "This way is wrong about UI Design.",
@@ -28,6 +60,7 @@ const content = [
     button: "READ MORE",
   },
   {
+    category: "UI",
     imageUrl: "/images/zurag2.png",
     date: "NOV 23 2020",
     title: "This way is wrong about UI Design.",
@@ -36,53 +69,79 @@ const content = [
     button: "READ MORE",
   },
   {
+    category: "UX",
     imageUrl: "/images/zurag1.png",
     date: "NOV 23 2020",
-    title: "This way is wrong about UI Design.",
+    title: "This way is wrong about UX Design.",
     paragraph:
       "A quick guide to assisting users in the challenging steps from learning about your podcast on the web. A quick guide to assisting users in the challenging steps from learning about your podcast on the web.",
     button: "READ MORE",
   },
   {
+    category: "UX",
     imageUrl: "/images/zurag2.png",
     date: "NOV 23 2020",
-    title: "This way is wrong about UI Design.",
+    title: "This way is wrong about UX Design.",
+    paragraph:
+      "A quick guide to assisting users in the challenging steps from learning about your podcast on the web. A quick guide to assisting users in the challenging steps from learning about your podcast on the web.",
+    button: "READ MORE",
+  },
+  {
+    category: "DEV",
+    imageUrl: "/images/zurag1.png",
+    date: "NOV 23 2020",
+    title: "This way is wrong about Dev Design.",
+    paragraph:
+      "A quick guide to assisting users in the challenging steps from learning about your podcast on the web. A quick guide to assisting users in the challenging steps from learning about your podcast on the web.",
+    button: "READ MORE",
+  },
+  {
+    category: "DEV",
+    imageUrl: "/images/zurag2.png",
+    date: "NOV 23 2020",
+    title: "This way is wrong about Dev Design.",
+    paragraph:
+      "A quick guide to assisting users in the challenging steps from learning about your podcast on the web. A quick guide to assisting users in the challenging steps from learning about your podcast on the web.",
+    button: "READ MORE",
+  },
+  {
+    category: "DEV",
+    imageUrl: "/images/zurag2.png",
+    date: "NOV 23 2020",
+    title: "This way is wrong about Dev Design.",
     paragraph:
       "A quick guide to assisting users in the challenging steps from learning about your podcast on the web. A quick guide to assisting users in the challenging steps from learning about your podcast on the web.",
     button: "READ MORE",
   },
 ];
-// const CardItem = (props) => {
-//   return (
-//     <div>
-//       <img src={props.img} alt="zurag" />
-//       <p>{props.date}</p>
-//       <h2>{props.title}</h2>
-//       <p>{props.description}</p>
-//       <h4>{props.btn}</h4>
-//     </div>
-//   );
-// };
-// const Card = () => {
-//   return cardData.map((card) => {
-//     return (
-//       <CardItem
-//         img={card.img}
-//         date={card.date}
-//         title={card.title}
-//         description={card.description}
-//         btn={card.btn}
-//       />
-//     );
-//   });
-// };
 
 const Main = () => {
+  const [news, setNews] = useState(content);
+
+  const handleChange = (category) => {
+    console.log("Cat", category);
+    console.log(news);
+    const All = content;
+    if (category == "") {
+      setNews(All);
+      console.log(All);
+    } else {
+      const filtered = content.filter((item) => item.category === category);
+      setNews(filtered);
+    }
+  };
   return (
     <div className="container">
-      <Button />
+      <div>
+        {menus.map((menu) => {
+          return <Btn menu={menu} handleChange={handleChange} />;
+        })}
+      </div>
+
       <div className={style.content}>
-        <Cards />
+        {news.map((blog) => {
+          return <Cards card={blog} />;
+        })}
       </div>
     </div>
   );

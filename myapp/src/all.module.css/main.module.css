@@ -9,7 +9,7 @@
   gap: 20px;
   padding: 0px;
 }
-.ul button:focus {
+.button:focus {
   color: #d05270;
   border-bottom: 1px solid #d05270;
 }

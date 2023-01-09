@@ -10,16 +10,17 @@ const menu = [
   "News",
 ];
 
-const Button = () => {
+const Btn = (props) => {
   return (
-    <ul className={style.ul}>
-      {menu.map((i) => (
-        <li>
-          <button className={style.button}>{i}</button>
-        </li>
-      ))}
-    </ul>
+    <button
+      className={style.button}
+      variant="danger"
+      onClick={() => {
+        props.handleChange(props.menu.category);
+      }}
+    >
+      {props.menu.name}
+    </button>
   );
 };
-
-export default Button;
+export default Btn;

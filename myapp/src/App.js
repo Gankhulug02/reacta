@@ -4,8 +4,8 @@ import "./App.scss";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  // return <Home />;
-  return <Blog_post />;
+  return <Home />;
+  // return <Blog_post />;
 }
 
 export default App;
