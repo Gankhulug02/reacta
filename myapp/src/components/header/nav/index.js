@@ -1,13 +1,13 @@
 import "../../../all.module.css/header.css";
 
 const menu = [
-  { name: "PORTFOLIO", category: "Portfolio" },
-  { name: "BLOG", category: "Blog" },
+  { name: "Portfolio", category: "Portfolio" },
+  { name: "Blog", category: "Blog" },
   { name: "CV", category: "UX" },
-  { name: "STORE", category: "DEV" },
-  { name: "FREELANCE", category: "" },
-  { name: "ABOUT ME", category: "" },
-  { name: "CONTRACT", category: "" },
+  { name: "Store", category: "DEV" },
+  { name: "Freelance", category: "" },
+  { name: "About Me", category: "" },
+  { name: "Contract", category: "" },
 ];
 
 const Nav = (props) => {
@@ -21,11 +21,11 @@ const Nav = (props) => {
         <div className="navR">
           <ul>
             {menu.map((i) => (
-              <li>
+              <li key={i.name}>
                 {" "}
                 <button
                   onClick={() => {
-                    props.handleChange(i.category);
+                    props.handleChange(i.name);
                   }}
                 >
                   {i.name}

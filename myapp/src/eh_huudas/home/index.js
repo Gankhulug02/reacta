@@ -9,7 +9,7 @@ import { useState } from "react";
 function Home() {
   const handleChange = (category) => {
     // alert("asd");
-    console.log("menu" + category);
+    console.log(`menu ${category}`);
   };
 
   return (

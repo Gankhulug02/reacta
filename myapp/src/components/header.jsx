@@ -31,7 +31,9 @@ const Header = () => {
           </p>
           <div className="social">
             {socialBtn.map((i) => (
-              <button className={i.classNer}>{i.ner}</button>
+              <button key={i.ner} className={i.classNer}>
+                {i.ner}
+              </button>
             ))}
           </div>
         </div>
