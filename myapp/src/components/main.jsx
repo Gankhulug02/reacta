@@ -4,7 +4,7 @@ import Cards from "./main/cards/index";
 import { useState } from "react";
 
 const menus = [
-  { name: "All", category: "" },
+  { name: "All", category: "All" },
   { name: "UI Design", category: "UI" },
   { name: "UX Design", category: "UX" },
   { name: "DEV Design", category: "DEV" },
@@ -119,10 +119,8 @@ const Main = () => {
   const [news, setNews] = useState(content);
 
   const handleChange = (category) => {
-    console.log("Cat", category);
-    console.log(news);
     const All = content;
-    if (category == "") {
+    if (category == "All") {
       setNews(All);
       console.log(All);
     } else {

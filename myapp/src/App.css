@@ -48,3 +48,7 @@ button {
   left: 50%;
   transform: translate(-50%);
 }
+.footer {
+  padding: 5%;
+  /* background-color: #3a0ca3; */
+}

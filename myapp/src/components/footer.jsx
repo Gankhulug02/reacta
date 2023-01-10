@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 
 const Footer = () => {
   return (
-    <Container>
+    <Container className="footer">
       <img src="/images/zurag4.svg" alt="" className="auto" />
     </Container>
   );
