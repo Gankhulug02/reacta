@@ -1,0 +1,19 @@
+.name {
+  /* background-color: aquamarine; */
+  display: flex;
+  gap: 20px;
+  margin: 0 auto;
+}
+.card {
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px;
+  margin: 0 auto;
+}
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+}
