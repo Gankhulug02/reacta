@@ -4,6 +4,9 @@ import "./App.scss";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const more = () => {
+    console.log("asd");
+  };
   return <Home />;
   // return <Blog_post />;
 }

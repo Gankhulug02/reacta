@@ -128,6 +128,9 @@ const Main = () => {
       setNews(filtered);
     }
   };
+  const more = () => {
+    console.log("asd");
+  };
   return (
     <div className="container">
       <div>

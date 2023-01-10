@@ -1,5 +1,4 @@
 import "../all.module.css/header.css";
-import Nav from "../components/header/nav/index";
 
 const menu = [
   "portfolia",
@@ -19,7 +18,6 @@ const socialBtn = [
 const Header = () => {
   return (
     <div className="container">
-      <Nav />
       <div className="headerBottom">
         <div className="BottomLeft">
           <h1>Blog Posts</h1>

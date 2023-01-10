@@ -1,16 +1,16 @@
 import "../../../all.module.css/header.css";
 
 const menu = [
-  "portfolia",
-  "BLOG",
-  "CV",
-  "store",
-  "freelance",
-  "about me",
-  "contract",
+  { name: "PORTFOLIO", category: "Portfolio" },
+  { name: "BLOG", category: "Blog" },
+  { name: "CV", category: "UX" },
+  { name: "STORE", category: "DEV" },
+  { name: "FREELANCE", category: "" },
+  { name: "ABOUT ME", category: "" },
+  { name: "CONTRACT", category: "" },
 ];
 
-const Nav = () => {
+const Nav = (props) => {
   return (
     <div className="container">
       <nav>
@@ -23,7 +23,13 @@ const Nav = () => {
             {menu.map((i) => (
               <li>
                 {" "}
-                <button>{i}</button>{" "}
+                <button
+                  onClick={() => {
+                    props.handleChange(i.category);
+                  }}
+                >
+                  {i.name}
+                </button>{" "}
               </li>
             ))}
           </ul>
